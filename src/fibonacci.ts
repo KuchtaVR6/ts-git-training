@@ -1,8 +1,14 @@
 export const computeFibonacciNumber = (position: number, isRecursive: boolean = false): number => {
-    if (isRecursive) return recursiveFibonacci(position);
+    if (isRecursive) {
+        return recursiveFibonacci(position);
+    };
 
     if (position === 1 || position === 2) {
         return 1;
+    }
+    
+    if (position < 0) {
+        return computeNegativeFibonacci(position);
     }
 
     let smallFibonacciNumber = 1;
